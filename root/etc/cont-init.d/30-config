@@ -16,6 +16,7 @@ if [ -f /version.txt ]; then
 	ln -s /config /usr/local/openvpn_as
 	if [ ! -f /config/etc/as.conf ]; then
 		echo "installing openvpn-as for the first time"
+		export http_proxy="http://host.docker.internal:10809"
 		apt-get update && \
 		apt-get install -y \
 			openvpn-as=$OPENVPNAS_VERSION
