@@ -9,7 +9,8 @@ LABEL maintainer="aptalca"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
-
+ENV http_proxy="host.docker.internal:10809"
+ENV HTTPS_PROXY="host.docker.internal:10809"
 RUN \
  echo "**** install dependencies ****" && \
  apt-get update && \
